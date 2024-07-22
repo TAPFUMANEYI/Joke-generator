@@ -16,3 +16,9 @@ fs.readFile('quotes.json', 'utf8', (err, data) => {
       // Display the quote
       console.log(`"${randomQuote.quote}" - ${randomQuote.author}`);
   });
+
+  // Function to get a random quote
+function getRandomQuote(quotes) {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    return quotes[randomIndex];
+}
