@@ -6,3 +6,13 @@ fs.readFile('quotes.json', 'utf8', (err, data) => {
         console.error('Error reading the file:', err);
         return;
     }
+
+      // Parse the JSON data
+      const quotes = JSON.parse(data);
+
+      // Generating a random quote
+      const randomQuote = getRandomQuote(quotes);
+  
+      // Display the quote
+      console.log(`"${randomQuote.quote}" - ${randomQuote.author}`);
+  });
